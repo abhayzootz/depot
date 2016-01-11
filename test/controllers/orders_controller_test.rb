@@ -27,7 +27,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should create order" do
-    assert_difference('Order.count') do
+      assert_difference('Order.count') do
       post :create, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
 

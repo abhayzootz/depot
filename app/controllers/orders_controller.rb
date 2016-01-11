@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   def new
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Your cart is empty"
-  return
+    return
   end
     @order = Order.new
   end
@@ -35,7 +35,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:card_id])
+        #binding.pry
+        Cart.destroy(session[:cart_id])
         session[:card_id] = nil
 
         format.html { redirect_to store_url, notice: 
