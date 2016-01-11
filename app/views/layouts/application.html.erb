@@ -7,7 +7,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<!-- START_HIGHLIGHT -->
+
 <body class='<%= controller.controller_name %>'>
 <div id="banner">
 	<%= image_tag("logo.png")%>
@@ -15,6 +15,10 @@
 </div>
 	<div id ="columns">
 		<div id ="side">
+			<%= hidden_div_if(@cart.line_items.empty?, id:'cart') do %>
+<%= render @cart %>
+<%end%>
+
 		<ul>
 			<li><a href="https://www....">Home</a></li>
 			<li><a href="https://www....">Questions</a></li>
