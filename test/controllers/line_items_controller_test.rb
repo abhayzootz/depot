@@ -1,3 +1,7 @@
+=begin
+
+=end
+
 require 'test_helper'
 
 class LineItemsControllerTest < ActionController::TestCase
