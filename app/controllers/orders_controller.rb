@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         #binding.pry
         Cart.destroy(session[:cart_id])
         session[:card_id] = nil
-        orderNotifier.received(@order).deliver
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice: 
           'Thank you for your order.' }
         format.json { render :show, status: :created, location: @order }
