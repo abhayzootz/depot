@@ -1,0 +1,46 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title = content_for?(:title) ? yield(:title) : "foundation-rails"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body class="#{controller.controller_name}"
+    //Navigation
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="vertical medium-horizontal menu">
+        <li>
+          <a href="#">
+            = t('home')
+          </a>
+
+        </li>
+        <li>
+          <a href="#">
+            = t('Questions')
+          </a>
+        
+        </li>
+        <li>
+          <a href="#">
+            = t('news')
+          </a>
+        
+        </li>
+        <li>
+          <a href="#">
+            = t('about')
+          </a>
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+  br       
+  #main
+
+    = yield
+    = javascript_include_tag "application"
