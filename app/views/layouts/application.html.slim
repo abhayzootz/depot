@@ -14,39 +14,40 @@ html[lang="en"]
       <div class="top-bar-left">
         <ul class="vertical medium-horizontal menu">
           <li>
-            <a href="#">
+            <a href="/">
               = t('home')
             </a>
-
           </li>
           <li>
             <a href="#">
               = t('Questions')
             </a>
-          
           </li>
           <li>
             <a href="#">
               = t('news')
             </a>
-          
           </li>
           <li>
             <a href="#">
               = t('about')
             </a>
-          
           </li>
         </ul>
       </div>
     </div>
+  br       
+  #main
+    = yield
+    = javascript_include_tag "application"
+
+          
        
+
+          
+
+          
            
           
 
 
-  br       
-  #main
-
-    = yield
-    = javascript_include_tag "application"
