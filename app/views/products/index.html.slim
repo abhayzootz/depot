@@ -15,12 +15,13 @@ table
           = product.title
         dd
           = truncate(strip_tags(product.description), length: 80)
+        dt
+          = product.available_quantity  
     td.list_actions
       = link_to 'Show', product
       br
       = link_to 'Edit', edit_product_path(product)
       br
-      = link_to 'Destroy', product, method: :delete,
-      -           data: { confirm: 'Are you sure?' }
+      = link_to 'Destroy', product, method: :delete,data: { confirm: 'Are you sure?' }
 br
 = link_to 'New Product', new_product_path

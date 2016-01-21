@@ -1,3 +1,10 @@
-| $('#notice').hide(); if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); } $('#cart').html("
-= escape_javascript render(@cart)
-| "); $('#current_item').css({'background-color':'#88ff88'}). animate({'background-color':'#114411'}, 1000);
+|    
+  $('#notice').hide();
+  if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); };
+  $('#cart').html("#{escape_javascript render(@cart)}");
+  $('#current_item').css({'background-color':'#88ff88'}). animate({'background-color':'#114411'}, 1000);
+
+- if @cart.line_items.any?
+  |
+    $('#cart_box').removeclass('hide');
+    $('#products_list').switchClass('medium-8','medium-4',1000, "easeInOutQuad");
